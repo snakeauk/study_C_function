@@ -1,0 +1,21 @@
+name: Makefile test
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Set up repository
+      run: sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install build-essential -y
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Fork test
+      run: cc ./fork/fork.c -o ./fork/fork && ./fork/fork
