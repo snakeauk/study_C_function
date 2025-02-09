@@ -14,4 +14,4 @@ jobs:
       run : sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install build-essential -y
     
     - name: fork test
-      run: cc ./fork/fork.c -o fork && ./fork/fork
+      run: cc ./fork/fork.c -o ./fork/fork && ./fork/fork
